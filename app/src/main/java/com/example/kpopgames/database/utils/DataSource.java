@@ -17,7 +17,7 @@ public class DataSource {
 
     private DataSource(Context ctx){
         dbHelper = new DbHelper(ctx);
-
+        open();
         memberDataSource = new memberDataSource(database);
     }
 

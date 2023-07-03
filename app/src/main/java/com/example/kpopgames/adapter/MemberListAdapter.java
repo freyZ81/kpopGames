@@ -1,4 +1,4 @@
-package com.example.kpopgames.activities.memberList;
+package com.example.kpopgames.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -54,6 +54,11 @@ public class MemberListAdapter extends BaseAdapter {
         } else {
             holder = (MemberListAdapter.ViewHolder) convertView.getTag();
         }
+
+        Member member = this.listData.get(position);
+        holder.gruppeView.setText(member.getGruppe());
+        holder.nameView.setText(member.getName());
+
         return convertView;
     }
 

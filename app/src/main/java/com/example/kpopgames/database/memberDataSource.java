@@ -25,7 +25,7 @@ public class memberDataSource {
                     + COLUMN_NAME + " CHAR(50) NOT NULL,"
                     + COLUMN_GRUPPE + " CHAR(50))";
 
-    public static final String SQL_DROP_SETTINGS = "DROP TABLE IF EXISTS " + TABLE_MEMBERS;
+    public static final String SQL_DROP_MEMBERS = "DROP TABLE IF EXISTS " + TABLE_MEMBERS;
 
     private String[] columns = {
             COLUMN_ID,
@@ -45,10 +45,10 @@ public class memberDataSource {
         values.put(COLUMN_GRUPPE, gruppe);
 
         database.insert(TABLE_MEMBERS, null, values);
+
+        Log.e("create", "Member " + name + " wurde mit der Gruppe " + gruppe + " hinzugefügt.");
     }
 
-
-    //cursorToMember
     private Member cursorToMember(Cursor cursor) {
         int idId = cursor.getColumnIndex(COLUMN_ID);
         int idName = cursor.getColumnIndex(COLUMN_NAME);
@@ -63,7 +63,6 @@ public class memberDataSource {
 
     public List<Member> getAllMember() {
         database.execSQL(SQL_CREATE_MEMBERS);
-        createMember("Yujin", "IVE");
 
         List<Member> memberList = new ArrayList<>();
 
