@@ -50,6 +50,7 @@ public class MemberListAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.nameView = convertView.findViewById(R.id.textView_name);
             holder.gruppeView = convertView.findViewById(R.id.textView_gruppe);
+            holder.geburtstagView = convertView.findViewById(R.id.textView_geburtsdatum);
             convertView.setTag(holder);
         } else {
             holder = (MemberListAdapter.ViewHolder) convertView.getTag();
@@ -58,6 +59,11 @@ public class MemberListAdapter extends BaseAdapter {
         Member member = this.listData.get(position);
         holder.gruppeView.setText(member.getGruppe());
         holder.nameView.setText(member.getName());
+        if (member.getGeburtstag() != null) {
+            holder.geburtstagView.setText(member.getGeburtstag());
+        } else {
+            holder.geburtstagView.setText("");
+        }
 
         return convertView;
     }
@@ -65,5 +71,6 @@ public class MemberListAdapter extends BaseAdapter {
     static class ViewHolder {
         TextView nameView;
         TextView gruppeView;
+        TextView geburtstagView;
     }
 }

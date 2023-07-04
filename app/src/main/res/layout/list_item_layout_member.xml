@@ -6,7 +6,7 @@
         android:id="@+id/textView_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_gruppe"
+        android:layout_below="@+id/textView_geburtsdatum"
         android:layout_marginStart="10dp"
         android:text="Yujin"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
@@ -15,12 +15,25 @@
         android:id="@+id/textView_gruppe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_below="@+id/textView_geburtsdatum"
+        android:gravity="right"
+        android:text="IVE"
+        android:textAlignment="gravity"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/textView_geburtsdatum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
         android:gravity="right"
-        android:text="IVE"
+        android:text="01-09-2003"
         android:textAlignment="gravity"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
 </RelativeLayout>

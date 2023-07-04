@@ -4,20 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txtMemberBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Birthday"
+        android:textAlignment="gravity"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txtMemberBirthdayDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Heute hat keiner Geburtstag!"
+        android:textAlignment="gravity"
+        android:textSize="18sp"/>
+
     <LinearLayout
         android:id="@+id/memberliste_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtMemberliste"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Memberliste:"
-            android:textAlignment="gravity"
-            android:textSize="18sp" />
 
         <ListView
             android:id="@+id/listview_member"
@@ -30,14 +40,5 @@
         </ListView>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnAddMember"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Member hinzufügen"
-        android:textSize="18sp" />
 
 </RelativeLayout>

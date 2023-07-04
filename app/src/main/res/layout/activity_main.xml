@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/login_layout"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -31,14 +31,28 @@
         android:onClick="onClickBtnMemberPick"/>
 
     <Button
+        android:id="@+id/btnMemberBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnMemberPick"
+        android:minWidth="500dp"
+        android:text="Geburtstag"
+        android:textSize="24sp"
+        android:onClick="onClickBtnMemberBirthday"/>
+
+    <Button
         android:id="@+id/btnMemberList"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnMemberBirthday"
         android:minWidth="500dp"
         android:text="Memberlist"
         android:textSize="24sp"

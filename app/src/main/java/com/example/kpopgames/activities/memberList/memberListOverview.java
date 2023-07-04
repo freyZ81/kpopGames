@@ -19,6 +19,7 @@ import com.example.kpopgames.database.utils.DataSource;
 
 import android.util.Log;
 import java.util.List;
+import java.util.Locale;
 
 
 public class memberListOverview extends AppCompatActivity {
@@ -32,16 +33,17 @@ public class memberListOverview extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_list);
-        Log.e("test", "test");
         memberDataSource = DataSource.get().getMemberDataSource();
 
-        showAllListEntries();
+        showAllMembers();
 
         btnAdd = findViewById(R.id.btnAddMember);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder dlgBuilder = new AlertDialog.Builder(memberListOverview.this, android.R.style.Theme_DeviceDefault_Dialog_Alert);
+                memberDataSource.addMembers();
+                recreate();
+                /*AlertDialog.Builder dlgBuilder = new AlertDialog.Builder(memberListOverview.this, android.R.style.Theme_DeviceDefault_Dialog_Alert);
 
                 dlgBuilder.setMessage("Gruppe:");
                 dlgBuilder.setCancelable(true);
@@ -54,7 +56,10 @@ public class memberListOverview extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Log.e("inputGruppe", inputGruppe.getText().toString());
-                        if (inputGruppe.getText().toString().length() != 0) {
+                        if (inputGruppe.getText().toString().equalsIgnoreCase("ALLE")) {
+                            memberDataSource.addMembers();
+                            recreate();
+                        } else if (inputGruppe.getText().toString().length() != 0) {
                             AlertDialog.Builder dlgBuilder = new AlertDialog.Builder(memberListOverview.this, android.R.style.Theme_DeviceDefault_Dialog_Alert);
 
                             dlgBuilder.setMessage("Member:");
@@ -67,13 +72,12 @@ public class memberListOverview extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     if (inputMember.getText().toString().length() != 0) {
-                                        memberDataSource.createMember(inputMember.getText().toString(),
-                                                inputGruppe.getText().toString());
+                                        memberDataSource.createMember(inputGruppe.getText().toString(),
+                                                inputMember.getText().toString(), null);
                                         recreate();
                                     } else {
                                         Log.e("else", inputMember.getText().toString());
                                     }
-
                                 }
                             });
                             AlertDialog alert = dlgBuilder.create();
@@ -86,15 +90,13 @@ public class memberListOverview extends AppCompatActivity {
 
                 AlertDialog alert = dlgBuilder.create();
                 alert.setIcon(android.R.drawable.ic_dialog_alert);
-                alert.show();
+                alert.show();*/
             }
         });
 
     }
 
-
-
-    private void showAllListEntries () {
+    private void showAllMembers () {
         final List<Member> memberList = memberDataSource.getAllMember();
         Log.e("memberList", memberList.toString());
         memberListView = findViewById(R.id.listview_member);

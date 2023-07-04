@@ -5,11 +5,13 @@ public class Member {
     private  long id;
     private String name;
     private String gruppe;
+    private String geburtstag;
 
-    public Member(int id, String name, String gruppe) {
+    public Member(int id, String name, String gruppe, String geburtstag) {
         this.id = id;
         this.name = name;
         this.gruppe = gruppe;
+        this.geburtstag = geburtstag;
     }
 
     public long getId() {
@@ -34,6 +36,14 @@ public class Member {
 
     public void setGruppe(String gruppe) {
         this.gruppe = gruppe;
+    }
+
+    public String getGeburtstag() {
+        return geburtstag;
+    }
+
+    public void setGeburtstag(String geburtstag) {
+        this.geburtstag = geburtstag;
     }
 
     @Override
