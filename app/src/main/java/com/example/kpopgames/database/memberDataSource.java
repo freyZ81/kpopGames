@@ -8,8 +8,12 @@ import android.util.Log;
 
 import com.example.kpopgames.model.Member;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class memberDataSource {
 
@@ -87,13 +91,19 @@ public class memberDataSource {
         return memberList;
     }
 
-    public List<Member> getAllMemberTodayBirthday(Long timestamp) {
+    public List<Member> getAllMemberTodayBirthday() {
+        Date c = Calendar.getInstance().getTime();
+        System.out.println("Current time => " + c);
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM", Locale.getDefault());
+        String formattedDate = df.format(c);
+        Log.e("formDate", formattedDate);
 
         List<Member> memberList = new ArrayList<>();
 
         Cursor cursor = database.query(TABLE_MEMBERS,
-                columns, null, null,
-                null, null, "LOWER(" + COLUMN_GRUPPE + "), " + COLUMN_NAME);
+                columns, COLUMN_GEBURTSDATUM + " like '" + formattedDate + "%'", null,
+                null, null, COLUMN_GEBURTSDATUM);
 
         cursor.moveToFirst();
         Member member;
@@ -119,32 +129,59 @@ public class memberDataSource {
         createMember("IVE", "Rei", "03-02-2004");
         createMember("IVE", "Liz", "21-11-2004");
 
-        createMember("aespa", "Karina", null);
-        createMember("aespa", "Giselle", null);
-        createMember("aespa", "Winter", null);
-        createMember("aespa", "Ningning", null);
+        createMember("aespa", "Karina", "11-04-2000");
+        createMember("aespa", "Giselle", "30-10-2000");
+        createMember("aespa", "Winter", "01-01-2001");
+        createMember("aespa", "Ningning", "23-10-2002");
 
-        createMember("Itzy", "Lia", null);
-        createMember("Itzy", "Yeji", null);
-        createMember("Itzy", "Ryujin", null);
-        createMember("Itzy", "Chaeryeong", null);
-        createMember("Itzy", "Yuna", null);
+        createMember("Itzy", "Ryujin", "17-04-2001");
+        createMember("Itzy", "Yeji", "26-05-2000");
+        createMember("Itzy", "Chaeryeong", "05-06-2001");
+        createMember("Itzy", "Lia", "21-07-2000");
+        createMember("Itzy", "Yuna", "09-12-2003");
 
-        createMember("NMIXX", "Lily", null);
-        createMember("NMIXX", "Bae", null);
-        createMember("NMIXX", "Kyujin", null);
-        createMember("NMIXX", "Haewon", null);
-        createMember("NMIXX", "Jiwoo", null);
-        createMember("NMIXX", "Sullyoon", null);
-        createMember(null, "Jinni", null);
+        createMember("NMIXX", "Sullyoon", "26-01-2004");
+        createMember("NMIXX", "Haewon", "25-02-2003");
+        createMember("NMIXX", "Jiwoo", "13-04-2005");
+        createMember("NMIXX", "Kyujin", "26-05-2006");
+        createMember("NMIXX", "Lily", "17-10-2002");
+        createMember("NMIXX", "Bae", "28-12-2004");
+        createMember("Ex-NMIXX", "Jinni", "16-04-2004");
 
-        createMember("Kep1er", "Yujin", null);
-        createMember("Kep1er", "Xiaoting", null);
-        createMember("Kep1er", "Dayeon", null);
-        createMember("Kep1er", "Chaehyun", null);
-        createMember("Kep1er", "Yeseo", null);
-        createMember("Kep1er", "Yeongeun", null);
-        createMember("Kep1er", "Mashiro", null);
-        createMember("Kep1er", "Hikaru", null);
+        createMember("Blackpink", "Jisoo", "03-01-1995");
+        createMember("Blackpink", "Jennie", "16-01-1996");
+        createMember("Blackpink", "Rose", "11-02-1997");
+        createMember("Blackpink", "Lisa", "27-03-1997");
+
+        createMember("Mamamoo", "Solar", "21-02-1991");
+        createMember("Mamamoo", "Wheein", "17-04-1995");
+        createMember("Mamamoo", "Hwasa", "23-07-1995");
+        createMember("Mamamoo", "Moonbyul", "22-12-1992");
+
+        createMember("Ex-Weeekly", "Jiyoon", "02-03-2002");
+        createMember("Weeekly", "Jaehee", "18-03-2004");
+        createMember("Weeekly", "Monday", "10-05-2002");
+        createMember("Weeekly", "Zoa", "31-05-2005");
+        createMember("Weeekly", "Jihan", "12-07-2004");
+        createMember("Weeekly", "Soeun", "26-10-2002");
+        createMember("Weeekly", "Soojin", "12-12-2001");
+
+        createMember("Viviz", "Eunha", "30-05-1997");
+        createMember("Viviz", "SinB", "03-06-1998");
+        createMember("Viviz", "Umji", "19-08-1998");
+
+        createMember("Kep1er", "Dayeon", "02-03-2003");
+        createMember("Kep1er", "Hikaru", "12-03-2004");
+        createMember("Kep1er", "Chaehyun", "26-04-2002");
+        createMember("Kep1er", "Bahiyyih", "27-07-2004");
+        createMember("Kep1er", "Yujin", "12-08-1996");
+        createMember("Kep1er", "Yeseo", "22-08-2005");
+        createMember("Kep1er", "Xiaoting", "12-11-1999");
+        createMember("Kep1er", "Mashiro", "16-12-1999");
+        createMember("Kep1er", "Yeongeun", "27-12-2004");
+
+
+
+
     }
 }
