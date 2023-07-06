@@ -122,13 +122,6 @@ public class memberDataSource {
         database.execSQL(SQL_DROP_MEMBERS);
         database.execSQL(SQL_CREATE_MEMBERS);
 
-        createMember("IVE", "Yujin", "01-09-2003");
-        createMember("IVE", "Wonyoung", "31-08-2004");
-        createMember("IVE", "Gaeul", "24-09-2002");
-        createMember("IVE", "Leeseo", "21-02-2007");
-        createMember("IVE", "Rei", "03-02-2004");
-        createMember("IVE", "Liz", "21-11-2004");
-
         createMember("aespa", "Karina", "11-04-2000");
         createMember("aespa", "Giselle", "30-10-2000");
         createMember("aespa", "Winter", "01-01-2001");
@@ -180,8 +173,390 @@ public class memberDataSource {
         createMember("Kep1er", "Mashiro", "16-12-1999");
         createMember("Kep1er", "Yeongeun", "27-12-2004");
 
+        createMember("(G)I-DLE", "Shuhua", "06-01-2000");
+        createMember("(G)I-DLE", "Miyeon", "31-01-1997");
+        createMember("Ex-(G)I-DLE", "Soojin", "09-03-1998");
+        createMember("(G)I-DLE", "Soyeon", "26-08-1998");
+        createMember("(G)I-DLE", "Yuqi", "23-09-1999");
+        createMember("(G)I-DLE", "Minnie", "23-10-1997");
+        
+        createMember("RV", "Seulgi", "10-02-1994");
+        createMember("RV", "Wendy", "21-02-1994");
+        createMember("RV", "Yeri", "05-03-1999");
+        createMember("RV", "Irene", "29-03-1991");
+        createMember("RV", "Joy", "03-09-1996");
+        
+        createMember("Le Sserafim", "Kazuha", "09-08-2003");
+        createMember("Le Sserafim", "Yunjin", "08-10-2001");
+        createMember("Le Sserafim", "Eunchae", "10-11-2006");
+        createMember("Ex-Le Sserafim", "Garam", "16-11-2005");
+        createMember("Le Sserafim", "Sakura", "19-03-1998");
+        createMember("Le Sserafim", "Chaewon", "01-08-2000");
+        createMember("Iz*One", "Chaeyeon", "11-01-2000");
+        createMember("Iz*One", "Minju", "05-02-2001");
+        createMember("Iz*One", "Nako", "18-06-2001");
+        createMember("Iz*One", "Hyewon", "05-07-1999");
+        createMember("Iz*One", "Eunbi", "27-09-1995");
+        createMember("Iz*One", "Yena", "29-09-1999");
+        createMember("Iz*One", "Hitomi", "06-10-2001");
+        createMember("Iz*One", "Yuri", "22-10-2001");
+        createMember("IVE", "Wonyoung", "31-08-2004");
+        createMember("IVE", "Yujin", "01-09-2003");
+        createMember("IVE", "Rei", "03-02-2004");
+        createMember("IVE", "Leeseo", "21-02-2007");
+        createMember("IVE", "Gaeul", "24-09-2002");
+        createMember("IVE", "Liz", "21-11-2004");
+        
+        createMember("Twice", "Jihyo", "01-02-1997");
+        createMember("Twice", "Mina", "24-03-1997");
+        createMember("Twice", "Chaeyoung", "23-04-1999");
+        createMember("Twice", "Dahyun", "28-05-1998");
+        createMember("Twice", "Tzuyu", "14-06-1999");
+        createMember("Twice", "Nayeon", "22-09-1995");
+        createMember("Twice", "Jeongyeon", "01-11-1996");
+        createMember("Twice", "Momo", "09-11-1996");
+        createMember("Twice", "Sana", "29-12-1996");
+        
+        createMember("Loona", "Kim Lip", "10-02-1999");
+        createMember("Loona", "Yves", "24-05-1997");
+        createMember("Loona", "Choerry", "04-06-2001");
+        createMember("Loona", "Jinsoul", "13-06-1997");
+        createMember("Loona", "Haseul", "18-08-1997");
+        createMember("Loona", "Heejin", "19-10-2000");
+        createMember("Ex-Loona", "Chuu", "20-10-1999");
+        createMember("Loona", "Yeojin", "11-11-2002");
+        createMember("Loona", "Hyejoo", "13-11-2001");
+        createMember("Loona", "Hyunjin", "15-11-2000");
+        createMember("Loona", "Gowon", "19-11-2000");
+        createMember("Loona", "Vivi", "09-12-1996");
+        
+        createMember("StayC", "Isa", "23-01-2002");
+        createMember("StayC", "Sumin", "13-03-2001");
+        createMember("StayC", "Yoon", "14-04-2004");
+        createMember("StayC", "Seeun", "14-06-2003");
+        createMember("StayC", "Sieun", "01-08-2001");
+        createMember("StayC", "J", "09-12-2004");
+        
+        createMember("Momoland", "Hyebin", "12-01-1996");
+        createMember("Ex-Momoland", "Daisy", "22-01-1999");
+        createMember("Momoland", "Nancy", "13-04-2000");
+        createMember("Ex-Momoland", "Taeha", "03-06-1998");
+        createMember("Momoland", "Nayun", "31-07-1998");
+        createMember("Ex-MML", "Yeonwoo", "01-08-1996");
+        createMember("Momoland", "JooE", "18-08-1999");
+        createMember("Momoland", "Ahin", "27-09-1999");
+        createMember("Momoland", "Jane", "20-12-1997");
+        
+        createMember("Cignature", "Chloe", "06-01-2001");
+        createMember("Cignature", "Jeewon", "01-04-1999");
+        createMember("Cignature", "Semi", "10-04-2002");
+        createMember("Cignature", "Seline", "20-07-2000");
+        createMember("Cignature", "Chaesol", "14-07-1998");
+        createMember("Cignature", "Dohee", "01-08-2002");
+        createMember("Cignature", "Haeun aka Ye Ah", "09-10-1999");
+        createMember("Cignature", "Belle", "03-11-2001");
+        
+        createMember("Dreamcatcher", "Yoohyeon", "07-01-1997");
+        createMember("Dreamcatcher", "Gahyeon", "03-02-1999");
+        createMember("Dreamcatcher", "Dami", "07-03-1997");
+        createMember("Dreamcatcher", "Handong", "26-03-1996");
+        createMember("Dreamcatcher", "Jiu", "17-05-1994");
+        createMember("Dreamcatcher", "Sua", "10-08-1994");
+        createMember("Dreamcatcher", "Siyeon", "01-10-1995");
 
+        createMember("Everglow", "Mia", "13-01-2000");
+        createMember("Everglow", "Onda", "18-05-2000");
+        createMember("Everglow", "EU", "19-05-1998");
+        createMember("Everglow", "Aisha", "21-07-2000");
+        createMember("Everglow", "Sihyeon", "05-08-1999");
+        createMember("Everglow", "Yiren", "29-12-2000");
 
+        createMember("PurpleKiss", "Dosie", "11-02-2000");
+        createMember("PurpleKiss", "Ireh", "30-04-2002");
+        createMember("PurpleKiss", "Swan", "11-07-2003");
+        createMember("PurpleKiss", "Goeun", "03-09-1999");
+        createMember("Ex-PurpleKiss", "Jieun", "04-09-1997");
+        createMember("PurpleKiss", "Yuki", "06-11-2002");
+        createMember("PurpleKiss", "Chaein", "05-12-2002");
 
+        createMember("BVNDIT", "Jungwoo", "02-04-1999");
+        createMember("BVNDIT", "Simyeong", "27-05-1999");
+        createMember("BVNDIT", "Yiyeon", "28-05-1995");
+        createMember("BVNDIT", "Songhee", "08-11-1998");
+        createMember("BVNDIT", "Seungeun", "27-12-2000");
+
+        createMember("Stray Kids", "I.N", "08-02-2001");
+        createMember("Stray Kids", "Hyunjin", "20-03-2000");
+        createMember("Stray Kids", "Changbin", "11-08-1999");
+        createMember("Stray Kids", "Han", "14-09-2000");
+        createMember("Stray Kids", "Felix", "15-09-2000");
+        createMember("Stray Kids", "Seungmin", "22-09-2000");
+        createMember("Stray Kids", "Bang Chan", "03-10-1997");
+        createMember("Stray Kids", "Lee Know", "25-10-1998");
+
+        createMember("Exo", "D.O.", "12-01-1993");
+        createMember("Exo", "Kai", "14-01-1994");
+        createMember("Ex-Exo", "Tao", "02-03-1993");
+        createMember("Exo", "Baekhyun", "06-03-1992");
+        createMember("Exo", "Xiumin", "26-03-1990");
+        createMember("Exo", "Sehun", "12-04-1994");
+        createMember("Ex-Exo", "Luhan", "20-04-1990");
+        createMember("Exo", "Suho", "22-05-1991");
+        createMember("Exo", "Chen", "21-09-1992");
+        createMember("Ex-Exo", "Lay", "07-10-1991");
+        createMember("Ex-Exo", "Kris", "06-11-1990");
+        createMember("Exo", "Chanyeol", "27-11-1992");
+
+        createMember("Rolling Quartz", "Yeongeun", "08-07-1996");
+        createMember("Rolling Quartz", "Arem", "27-09-1995");
+        createMember("Rolling Quartz", "Iree", "17-10-1995");
+        createMember("Rolling Quartz", "Jayoung", "27-10-1996");
+        createMember("Rolling Quartz", "Hyunjung", "31-10-1996");
+
+        createMember("Cherry Bullet", "Haeyoon", "10-01-1996");
+        createMember("Cherry Bullet", "Bora", "03-03-1999");
+        createMember("Cherry Bullet", "Yuju", "05-03-1997");
+        createMember("Cherry Bullet", "Chaerin", "13-03-2002");
+        createMember("Cherry Bullet", "Remi", "26-04-2001");
+        createMember("Cherry Bullet", "Jiwon", "04-09-2000");
+        createMember("Cherry Bullet", "May", "16-11-2004");
+
+        createMember("Lightsum", "Hina", "07-04-2003");
+        createMember("Lightsum", "Juhyeon", "08-04-2004");
+        createMember("Lightsum", "Yujeong", "14-06-2004");
+        createMember("Ex-Lightsum", "Huiyeon", "01-08-2005");
+        createMember("Lightsum", "Sangah", "04-09-2002");
+        createMember("Lightsum", "Chowon", "16-09-2002");
+        createMember("Ex-Lightsum", "Jian", "04-11-2006");
+        createMember("Lightsum", "Nayoung", "30-11-2002");
+
+        createMember("Monsta X", "Hyungwon", "15-01-1994");
+        createMember("Monsta X", "I.M", "26-01-1996");
+        createMember("Ex-Monsta X", "Wonho", "01-03-1993");
+        createMember("Monsta X", "Shownu", "18-06-1992");
+        createMember("Monsta X", "Joohoney", "06-10-1994");
+        createMember("Monsta X", "Minhyuk", "03-11-1993");
+        createMember("Monsta X", "Kihyun", "22-11-1993");
+
+        createMember("Ab6ix", "Daehwi", "29-01-2001");
+        createMember("Ab6ix", "Donghyun", "17-09-1998");
+        createMember("Ab6ix", "Woong", "15-10-1997");
+        createMember("Ab6ix", "Woojin", "02-11-1999");
+        createMember("Ex-Ab6ix", "Youngmin", "25-12-1995");
+
+        createMember("Enhypen", "Jungwon", "09-02-2004");
+        createMember("Enhypen", "Jay", "20-04-2002");
+        createMember("Enhypen", "Sunoo", "24-06-2003");
+        createMember("Enhypen", "Heeseung", "15-10-2001");
+        createMember("Enhypen", "Jake", "15-11-2002");
+        createMember("Enhypen", "Sunghoon", "08-12-2002");
+        createMember("Enhypen", "Ni-Ki", "09-12-2005");
+
+        createMember("Oneus", "Xion", "10-01-2000");
+        createMember("Oneus", "Seoho", "07-06-1996");
+        createMember("Oneus", "Keonhee", "27-06-1998");
+        createMember("Oneus", "Leedo", "26-07-1997");
+        createMember("Oneus", "Hwanwoong", "26-08-1998");
+        createMember("Ex-Oneus", "Ravn", "02-09-1995");
+
+        createMember("NCT", "Kun", "01-01-1996");
+        createMember("NCT", "Lucas", "25-01-1999");
+        createMember("NCT", "Doyoung", "01-02-1996");
+        createMember("NCT", "Jisung", "05-02-2002");
+        createMember("NCT", "Johnny", "09-02-1995");
+        createMember("NCT", "Jaehyun", "14-02-1997");
+        createMember("NCT", "Jungwoo", "19-02-1998");
+        createMember("NCT", "Ten", "27-02-1996");
+        createMember("NCT", "Renjun", "23-03-2000");
+        createMember("NCT", "Jeno", "23-04-2000");
+        createMember("NCT", "Haechan", "06-06-2000");
+        createMember("NCT", "Taeil", "14-06-1994");
+        createMember("NCT", "Taeyong", "01-07-1995");
+        createMember("NCT", "Mark", "02-08-1999");
+        createMember("NCT", "Xiaojun", "08-08-1999");
+        createMember("NCT", "Jaemin", "13-08-2000");
+        createMember("NCT", "Sungchan", "13-09-2001");
+        createMember("NCT", "Hendery", "28-09-1999");
+        createMember("NCT", "Yangyang", "10-10-2000");
+        createMember("NCT", "Yuta", "26-10-1995");
+        createMember("NCT", "Winwin", "28-10-1997");
+        createMember("NCT", "Chenle", "22-11-2001");
+        createMember("NCT", "Shotaro", "25-11-2000");
+
+        createMember("BTS", "J-Hope", "18-02-1994");
+        createMember("BTS", "Suga", "09-03-1993");
+        createMember("BTS", "Jungkook", "01-09-1997");
+        createMember("BTS", "RM", "12-09-1994");
+        createMember("BTS", "Jimin", "13-10-1995");
+        createMember("BTS", "Jin", "04-12-1992");
+        createMember("BTS", "V", "30-12-1995");
+
+        createMember("Super Junior", "Sungmin", "01-01-1986");
+        createMember("Super Junior", "Kyuhyun", "03-02-1988");
+        createMember("Super Junior", "Eunhyuk", "04-04-1986");
+        createMember("Super Junior", "Siwon", "07-04-1986");
+        createMember("Super Junior", "Ryeowook", "21-06-1987");
+        createMember("Super Junior", "Leeteuk", "01-07-1983");
+        createMember("Super Junior", "Heechul", "10-07-1983");
+        createMember("Super Junior", "Yesung", "24-08-1984");
+        createMember("Super Junior", "Shindong", "28-09-1985");
+        createMember("Super Junior", "Donghae", "15-10-1986");
+
+        createMember("Billlie", "Haram", "13-01-2001");
+        createMember("Billlie", "Suhyeon", "15-01-2000");
+        createMember("Billlie", "Sheon", "28-01-2003");
+        createMember("Billlie", "Haruna", "30-01-2006");
+        createMember("Billlie", "Siyoon", "16-02-2005");
+        createMember("Billlie", "Moon Sua", "09-09-1999");
+        createMember("Billlie", "Tsuki", "21-09-2002");
+
+        createMember("A.C.E", "Donghun", "28-02-1993");
+        createMember("A.C.E", "Wow", "15-03-1993");
+        createMember("A.C.E", "Jun", "02-06-1994");
+        createMember("A.C.E", "Kim Byeongkwan", "13-08-1996");
+        createMember("A.C.E", "Chan", "31-12-1997");
+
+        createMember("Ateez", "Yunho", "23-03-1999");
+        createMember("Ateez", "Seonghwa", "03-04-1998");
+        createMember("Ateez", "Yeosang", "15-06-1999");
+        createMember("Ateez", "San", "10-07-1999");
+        createMember("Ateez", "Mingi", "09-08-1999");
+        createMember("Ateez", "Jongho", "12-10-2000");
+        createMember("Ateez", "Hongjoong", "07-11-1998");
+        createMember("Ateez", "Wooyoung", "26-11-1999");
+
+        createMember("Astro", "Moonbin", "26-01-1998");
+        createMember("Astro", "Rocky", "25-02-1999");
+        createMember("Astro", "MJ", "05-03-1994");
+        createMember("Astro", "JinJin", "15-03-1996");
+        createMember("Astro", "Sanha", "21-03-2000");
+        createMember("Astro", "Eunwoo", "30-03-1997");
+
+        createMember("Treasure", "So Junghwan", "18-02-2005");
+        createMember("Treasure", "Jihoon", "14-03-2000");
+        createMember("Treasure", "Yoshi", "15-03-2000");
+        createMember("Ex-Treasure", "Mashiho", "25-03-2001");
+        createMember("Treasure", "Haruto", "05-04-2004");
+        createMember("Treasure", "Hyunsuk", "21-04-1999");
+        createMember("Ex-Treasure", "Bang Yedam", "07-05-2002");
+        createMember("Treasure", "Jaehyuk", "23-07-2001");
+        createMember("Treasure", "Asahi", "20-08-2001");
+        createMember("Treasure", "Junkyu", "09-09-2000");
+        createMember("Treasure", "Jeongwoo", "28-09-2004");
+        createMember("Treasure", "Doyoung", "04-12-2003");
+
+        createMember("CLASS:y", "Riwon", "11-01-2007");
+        createMember("CLASS:y", "Boeun", "11-02-2008");
+        createMember("CLASS:y", "Seonyou", "20-03-2008");
+        createMember("CLASS:y", "Chaewon", "04-06-2003");
+        createMember("CLASS:y", "Hyungseo", "25-06-2001");
+        createMember("CLASS:y", "Jimin", "25-11-2007");
+        createMember("CLASS:y", "Hyeju", "09-12-2003");
+
+        createMember("Bebez", "Sion", "07-03-2001");
+        createMember("Bebez", "YeYoung", "31-03-2000");
+        createMember("Bebez", "Min", "05-08-2004");
+
+        createMember("Ex-Oh My Girl", "JinE", "22-01-1995");
+        createMember("Oh My Girl", "Seunghee", "25-01-1996");
+        createMember("Oh My Girl", "Jiho", "04-04-1997");
+        createMember("Oh My Girl", "Mimi", "01-05-1995");
+        createMember("Oh My Girl", "Arin", "18-06-1999");
+        createMember("Oh My Girl", "Hyojung", "28-07-1994");
+        createMember("Oh My Girl", "Yubin", "09-09-1997");
+        createMember("Oh My Girl", "YooA", "17-09-1995");
+
+        createMember("KARD", "J.Seph", "21-06-1992");
+        createMember("KARD", "Somin", "22-08-1996");
+        createMember("KARD", "Jiwoo", "04-10-1996");
+        createMember("KARD", "BM", "20-10-1992");
+
+        createMember("Brave Girls", "Yuna", "06-04-1993");
+        createMember("Brave Girls", "Yujeong", "02-05-1991");
+        createMember("Brave Girls", "Eunji", "19-07-1992");
+        createMember("Brave Girls", "Minyoung", "12-09-1990");
+
+        createMember("CLC", "Eunbin", "06-01-2000");
+        createMember("CLC", "Yeeun", "10-08-1998");
+        createMember("CLC", "Seunghee", "10-10-1995");
+        createMember("CLC", "Elkie", "02-11-1998");
+        createMember("CLC", "Seungyeon", "06-11-1996");
+        createMember("Ex-CLC", "Sorn", "18-11-1996");
+
+        createMember("WOO!AH!", "Wooyeon", "11-02-2003");
+        createMember("WOO!AH!", "Nana", "09-03-2001");
+        createMember("WOO!AH!", "Lucy", "09-04-2004");
+        createMember("WOO!AH!", "Minseo", "12-08-2004");
+        createMember("WOO!AH!", "Sora", "30-08-2003");
+        createMember("Ex-WOO!AH!", "Songyee", "25-09-2004");
+
+        createMember("Craxy", "ChaeY", "06-01-2003");
+        createMember("Craxy", "Karin", "23-04-2000");
+        createMember("Craxy", "Wooah", "20-06-1997");
+        createMember("Craxy", "Hyejin", "13-07-2000");
+        createMember("Craxy", "Swan", "28-12-2000");
+
+        createMember("Pixy", "Lola", "22-02-2001");
+        createMember("Ex-Pixy", "Satbyeol", "27-02-2001");
+        createMember("Pixy", "Sua", "24-02-2003");
+        createMember("Ex-Pixy", "Ella", "26-03-1998");
+        createMember("Pixy", "Rinji", "05-05-2006");
+        createMember("Pixy", "Dia", "16-07-2001");
+        createMember("Pixy", "Dajeong", "31-07-2003");
+
+        createMember("Busters", "Yunji", "09-01-2007");
+        createMember("Busters", "Takara", "19-01-2005");
+        createMember("Busters", "Seira", "27-01-2004");
+        createMember("Busters", "Jieun", "05-03-2005");
+        createMember("Busters", "MinMin", "02-07-2006");
+        createMember("Busters", "Minji", "26-09-2006");
+
+        createMember("WJSN", "Yeoreum", "10-01-1999");
+        createMember("WJSN", "Xuan Yi", "26-01-1995");
+        createMember("WJSN", "Luda", "06-03-1997");
+        createMember("WJSN", "Dawon", "16-04-1997");
+        createMember("WJSN", "Dayoung", "14-05-1999");
+        createMember("WJSN", "Eunseo", "27-05-1998");
+        createMember("WJSN", "Cheng Xiao", "15-07-1998");
+        createMember("WJSN", "Yeonjung", "03-08-1999");
+        createMember("WJSN", "Bona", "19-08-1995");
+        createMember("WJSN", "Soobin", "14-09-1996");
+        createMember("WJSN", "Mei Qi", "15-10-1998");
+        createMember("WJSN", "Exy", "06-11-1995");
+        createMember("WJSN", "Seola", "24-12-1994");
+
+        createMember("NewJeans", "Danielle", "11-04-2005");
+        createMember("NewJeans", "Hyein", "21-04-2008");
+        createMember("NewJeans", "Minji", "07-05-2004");
+        createMember("NewJeans", "Haerin", "15-05-2006");
+        createMember("NewJeans", "Hanni", "06-10-2004");
+
+        createMember("Gugudan", "Mimi", "01-01-1993");
+        createMember("Gugudan", "Hana", "30-04-1993");
+        createMember("Gugudan", "Haebin", "16-08-1995");
+        createMember("Gugudan", "Sejeong", "28-08-1996");
+        createMember("Gugudan", "Sally", "23-10-1996");
+        createMember("Gugudan", "Soyee", "21-11-1996");
+        createMember("Gugudan", "Nayoung", "23-11-1995");
+        createMember("Gugudan", "Kang Mina", "04-12-1999");
+
+        createMember("tripleS", "Dahyun", "08-01-2003");
+        createMember("tripleS", "Yubin", "03-02-2005");
+        createMember("tripleS", "Yooyeon", "09-02-2001");
+        createMember("tripleS", "Kotone", "10-03-2004");
+        createMember("tripleS", "Hyerin", "12-04-2007");
+        createMember("tripleS", "Seoyeon", "06-08-2003");
+        createMember("tripleS", "Soomin", "03-10-2007");
+        createMember("tripleS", "Nakyoung", "13-10-2002");
+        createMember("tripleS", "Jiwoo", "24-10-2005");
+        createMember("tripleS", "Chaeyeon", "04-12-2004");
+        createMember("tripleS", "Kaede", "20-12-2005");
+
+        createMember("SuperM/Shinee", "Taemin", "18-07-1993");
+        createMember("April", "Rachel", "28-08-2000");
+        createMember("ANS", "Dalyn", "27-08-1999");
+        createMember("Pentagon", "Hui", "28-08-1993");
+        createMember("Weki Meki", "Lucy", "31-08-2002");
+        createMember("Cravity", "Minhee", "17-09-2002");
     }
 }
