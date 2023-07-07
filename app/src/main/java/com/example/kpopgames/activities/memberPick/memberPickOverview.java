@@ -11,6 +11,9 @@ import android.widget.Toast;
 import com.example.kpopgames.R;
 import com.example.kpopgames.database.memberDataSource;
 import com.example.kpopgames.database.utils.DataSource;
+import com.example.kpopgames.model.Member;
+
+import java.util.List;
 
 public class memberPickOverview extends AppCompatActivity {
 
@@ -23,11 +26,12 @@ public class memberPickOverview extends AppCompatActivity {
         countMember = (int) getIntent().getSerializableExtra(strCountMember);
         memberDataSource = DataSource.get().getMemberDataSource();
 
-        memberDataSource.getListOfMember(countMember);
-
+        final List<Member> memberList = memberDataSource.getListOfMember(countMember);
 
         setContentView(R.layout.activity_member_pick_overview);
-        Toast.makeText(memberPickOverview.this, "strCountMember: " + countMember,
-                Toast.LENGTH_LONG).show();
+
+
+        /*Toast.makeText(memberPickOverview.this, "strCountMember: " + countMember, Toast.LENGTH_LONG).show();*/
+
     }
 }

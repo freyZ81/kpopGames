@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class memberDataSource {
 
@@ -97,25 +98,39 @@ public class memberDataSource {
         return memberList;
     }
 
-    public List<Member> getListOfMember(int count) {
-        int maxCount = getLastId();
-        int addCount = Math.round(maxCount/count);
-        int countCounter = 1;
+    public List<Member> getListOfMember(int countMemberInGame) {
+        int maxCountMember = getLastId();
+        int addCount = Math.round(maxCountMember/countMemberInGame);
+        int idNumber = 1;
         List<Member> memberList = new ArrayList<>();
 
-        for(int i=1;i<=count;i++) {
-            Cursor cursor = database.query(TABLE_MEMBERS,
-                    columns, COLUMN_ID + " = " + countCounter, null,
-                    null, null, null);
+        ArrayList<Integer> arrlist = new ArrayList<Integer>(5);
 
+
+        for(int i=1;i<=countMemberInGame;i++) {
+            int randomNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
+            if (arrlist.contains(randomNum)) {
+                while(arrlist.contains(randomNum)) {
+                    //Log.e("randNum", "randomNum: " + randomNum + ", arrlist: " + arrlist);
+                    randomNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
+                }
+
+            }
+
+            arrlist.add(randomNum);
+            Cursor cursor = database.query(TABLE_MEMBERS,
+                    columns, COLUMN_ID + " = " + randomNum, null,
+                    null, null, null);
             cursor.moveToFirst();
             Member member;
             member = cursorToMember(cursor);
             memberList.add(member);
             cursor.close();
 
-            countCounter += addCount;
+
+            idNumber += addCount;
         }
+        //Log.e("memberList", "" + memberList);
         return memberList;
     }
 
@@ -158,6 +173,22 @@ public class memberDataSource {
     public void addMembers() {
         database.execSQL(SQL_DROP_MEMBERS);
         database.execSQL(SQL_CREATE_MEMBERS);
+
+        createMember(null, "PSY", "31-12-1977");
+        createMember(null, "Chungha", "09-02-1996");
+        createMember(null, "Soyou", "12-02-1992");
+        createMember(null, "Hyolyn", "11-12-1990");
+        createMember(null, "Somi", "09-03-2001");
+        createMember(null, "BabySoul", "06-07-1992");
+        createMember(null, "Suzy", "10-10-1994");
+        createMember(null, "Taeyeon", "09-03-1989");
+        createMember(null, "Hyuna", "06-06-1992");
+        createMember(null, "Sunmi", "02-05-1992");
+        createMember(null, "IU", "16-05-1993");
+        createMember(null, "G-Dragon", "18-08-1988");
+        createMember(null, "Bibi", "27-09-1998");
+        createMember(null, "Young-Ji", "10-09-2002");
+        createMember(null, "Alexa", "09-12-1996");
 
         createMember("aespa", "Karina", "11-04-2000");
         createMember("aespa", "Giselle", "30-10-2000");
@@ -603,16 +634,81 @@ public class memberDataSource {
         createMember("Cravity", "Taeyoung", "27-01-2003");
         createMember("Cravity", "Seongmin", "01-08-2003");
 
+        createMember("Pentagon", "Yuto", "23-01-1998");
+        createMember("Pentagon", "Kino", "27-01-1998");
+        createMember("Pentagon", "Wooseok", "31-01-1998");
+        createMember("Pentagon", "Yeo One", "27-03-1996");
+        createMember("Pentagon", "Jinho", "17-04-1992");
+        createMember("Pentagon", "Hongseok", "17-04-1994");
         createMember("Pentagon", "Hui", "28-08-1993");
-        //https://kprofiles.com/pentagon-members-profile/
+        createMember("Pentagon", "Yanan", "25-10-1996");
+        createMember("Pentagon", "Shinwon", "11-12-1995");
+
+        createMember("ADYA", "Yeonsu", "19-02-2003");
+        createMember("ADYA", "Seowon", "26-04-2004");
+        createMember("ADYA", "Sena", "12-10-2005");
+        createMember("ADYA", "Seungchae", "26-10-2006");
+        createMember("ADYA", "Chaeeun", "10-12-2005");
+
+        createMember("Babymonster", "Chiquita", "17-02-2009");
+        createMember("Babymonster", "Ruka", "20-03-2002");
+        createMember("Babymonster", "Ahyeon", "11-04-2007");
+        createMember("Babymonster", "Asa", "17-04-2006");
+        createMember("Babymonster", "Pharita", "26-08-2005");
+        createMember("Babymonster", "Rora", "14-10-2008");
+        createMember("Babymonster", "Haram", "17-10-2007");
+
+        createMember("XG", "Chisa", "17-01-2002");
+        createMember("XG", "Hinata", "11-06-2002");
+        createMember("XG", "Jurin", "19-06-2002");
+        createMember("XG", "Maya", "10-08-2005");
+        createMember("XG", "Juria", "28-11-2004");
+        createMember("XG", "Cocona", "06-12-2005");
+        createMember("XG", "Harvey", "18-12-2002");
+
+        createMember("Lapillus", "Shana", "13-03-2003");
+        createMember("Lapillus", "Yue", "03-06-2004");
+        createMember("Lapillus", "Bessie", "15-07-2004");
+        createMember("Lapillus", "Haeun", "02-11-2008");
+        createMember("Lapillus", "Seowon", "05-12-2006");
+        createMember("Lapillus", "Chanty", "15-12-2002");
+
+        createMember("Seventeen", "Seungkwan", "16-01-1998");
+        createMember("Seventeen", "Dino", "11-02-1999");
+        createMember("Seventeen", "DK", "18-02-1997");
+        createMember("Seventeen", "Vernon", "18-02-1998");
+        createMember("Seventeen", "Mingyu", "06-04-1997");
+        createMember("Seventeen", "Jun", "10-06-1996");
+        createMember("Seventeen", "Hoshi", "15-06-1996");
+        createMember("Seventeen", "Wonwoo", "17-07-1996");
+        createMember("Seventeen", "S.Coups", "08-08-1995");
+        createMember("Seventeen", "Jeonghan", "04-10-1995");
+        createMember("Seventeen", "The8", "07-11-1997");
+        createMember("Seventeen", "Woozi", "22-11-1996");
+        createMember("Seventeen", "Joshua", "30-12-1995");
+
+        createMember("Rocket Punch", "Suyun", "17-03-2001");
+        createMember("Rocket Punch", "Dahyun", "29-04-2005");
+        createMember("Rocket Punch", "Sohee", "14-08-2003");
+        createMember("Rocket Punch", "Juri", "03-10-1997");
+        createMember("Rocket Punch", "Yunkyoung", "01-11-2001");
+        createMember("Rocket Punch", "Yeonhee", "06-12-2000");
+
+        createMember("Weki Meki", "Sei", "07-01-2000");
+        createMember("Weki Meki", "Suyeon", "20-04-1997");
+        createMember("Weki Meki", "Elly", "20-07-1998");
+        createMember("Weki Meki", "Lucy", "31-08-2002");
+        createMember("Weki Meki", "Rina", "27-09-2001");
+        createMember("Weki Meki", "Lua", "06-10-2000");
+        createMember("Weki Meki", "Yoojung", "12-11-1999");
+        createMember("Weki Meki", "Doyeon", "04-12-1999");
 
         createMember("Shinee", "Taemin", "18-07-1993");
         createMember("April", "Rachel", "28-08-2000");
         createMember("ANS", "Dalyn", "27-08-1999");
-        createMember("Weki Meki", "Lucy", "31-08-2002");
 
 
 
-        //Rocket punch, pristin, apink, nature, favorite, bugaboo, XG, Babymonster, Seventeen, Adya
+        // pristin, apink, nature, favorite, bugaboo
     }
 }
