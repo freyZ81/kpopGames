@@ -18,6 +18,8 @@ import com.example.kpopgames.database.utils.DataSource;
 
 
 import android.util.Log;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -43,62 +45,13 @@ public class memberListOverview extends AppCompatActivity {
             public void onClick(View view) {
                 memberDataSource.addMembers();
                 recreate();
-                /*AlertDialog.Builder dlgBuilder = new AlertDialog.Builder(memberListOverview.this, android.R.style.Theme_DeviceDefault_Dialog_Alert);
-
-                dlgBuilder.setMessage("Gruppe:");
-                dlgBuilder.setCancelable(true);
-
-                final EditText inputGruppe = new EditText(
-                        memberListOverview.this);
-                dlgBuilder.setView(inputGruppe);
-                inputGruppe.setSingleLine();
-                dlgBuilder.setPositiveButton("Weiter", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Log.e("inputGruppe", inputGruppe.getText().toString());
-                        if (inputGruppe.getText().toString().equalsIgnoreCase("ALLE")) {
-                            memberDataSource.addMembers();
-                            recreate();
-                        } else if (inputGruppe.getText().toString().length() != 0) {
-                            AlertDialog.Builder dlgBuilder = new AlertDialog.Builder(memberListOverview.this, android.R.style.Theme_DeviceDefault_Dialog_Alert);
-
-                            dlgBuilder.setMessage("Member:");
-                            dlgBuilder.setCancelable(true);
-                            final EditText inputMember = new EditText(
-                                    memberListOverview.this);
-                            dlgBuilder.setView(inputMember);
-                            inputMember.setSingleLine();
-                            dlgBuilder.setPositiveButton("Hinzufügen", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    if (inputMember.getText().toString().length() != 0) {
-                                        memberDataSource.createMember(inputGruppe.getText().toString(),
-                                                inputMember.getText().toString(), null);
-                                        recreate();
-                                    } else {
-                                        Log.e("else", inputMember.getText().toString());
-                                    }
-                                }
-                            });
-                            AlertDialog alert = dlgBuilder.create();
-                            alert.setIcon(android.R.drawable.ic_dialog_alert);
-                            alert.show();
-                        }
-                    }
-                });
-
-
-                AlertDialog alert = dlgBuilder.create();
-                alert.setIcon(android.R.drawable.ic_dialog_alert);
-                alert.show();*/
             }
         });
-
     }
 
     private void showAllMembers () {
         final List<Member> memberList = memberDataSource.getAllMember();
-        Log.e("memberList", memberList.toString());
+        //Log.e("memberList", memberList.toString());
         memberListView = findViewById(R.id.listview_member);
         memberListView.setTextFilterEnabled(true);
         memberListAdapter = new MemberListAdapter(this, memberList);

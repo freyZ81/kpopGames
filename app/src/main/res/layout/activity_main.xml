@@ -19,7 +19,7 @@
     <Button
         android:id="@+id/btnMemberPick"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:layout_marginLeft="50dp"
@@ -33,7 +33,7 @@
     <Button
         android:id="@+id/btnMemberBirthday"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
@@ -47,7 +47,7 @@
     <Button
         android:id="@+id/btnMemberList"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"

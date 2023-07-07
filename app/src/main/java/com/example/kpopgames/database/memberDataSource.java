@@ -8,12 +8,14 @@ import android.util.Log;
 
 import com.example.kpopgames.model.Member;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
 public class memberDataSource {
 
@@ -39,6 +41,10 @@ public class memberDataSource {
             COLUMN_GRUPPE,
             COLUMN_GEBURTSDATUM
     };
+    private String[] column_id = {
+            COLUMN_ID
+    };
+
 
     private static SQLiteDatabase database;
 
@@ -91,13 +97,44 @@ public class memberDataSource {
         return memberList;
     }
 
-    public List<Member> getAllMemberTodayBirthday() {
-        Date c = Calendar.getInstance().getTime();
-        System.out.println("Current time => " + c);
+    public List<Member> getListOfMember(int count) {
+        int maxCount = getLastId();
+        int addCount = Math.round(maxCount/count);
+        int countCounter = 1;
+        List<Member> memberList = new ArrayList<>();
 
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM", Locale.getDefault());
-        String formattedDate = df.format(c);
-        Log.e("formDate", formattedDate);
+        for(int i=1;i<=count;i++) {
+            Cursor cursor = database.query(TABLE_MEMBERS,
+                    columns, COLUMN_ID + " = " + countCounter, null,
+                    null, null, null);
+
+            cursor.moveToFirst();
+            Member member;
+            member = cursorToMember(cursor);
+            memberList.add(member);
+            cursor.close();
+
+            countCounter += addCount;
+        }
+        return memberList;
+    }
+
+    public int getLastId() {
+        Cursor cursor = database.query(TABLE_MEMBERS,
+                column_id, null, null,
+                null, null, COLUMN_ID + " desc");
+        cursor.moveToFirst();
+        int lastId = Integer.parseInt(cursor.getString(0));
+        Log.e("lastId", "lastId: " + lastId);
+        return lastId;
+    }
+
+    public List<Member> getAllMemberTodayBirthday() {
+        Date date = new Date();
+        DateFormat df = new SimpleDateFormat("dd-MM");
+        df.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
+        System.out.println("Date in Seoul: " + df.format(date));
+        String formattedDate = df.format(date);
 
         List<Member> memberList = new ArrayList<>();
 
@@ -180,11 +217,11 @@ public class memberDataSource {
         createMember("(G)I-DLE", "Yuqi", "23-09-1999");
         createMember("(G)I-DLE", "Minnie", "23-10-1997");
         
-        createMember("RV", "Seulgi", "10-02-1994");
-        createMember("RV", "Wendy", "21-02-1994");
-        createMember("RV", "Yeri", "05-03-1999");
-        createMember("RV", "Irene", "29-03-1991");
-        createMember("RV", "Joy", "03-09-1996");
+        createMember("Red Velvet", "Seulgi", "10-02-1994");
+        createMember("Red Velvet", "Wendy", "21-02-1994");
+        createMember("Red Velvet", "Yeri", "05-03-1999");
+        createMember("Red Velvet", "Irene", "29-03-1991");
+        createMember("Red Velvet", "Joy", "03-09-1996");
         
         createMember("Le Sserafim", "Kazuha", "09-08-2003");
         createMember("Le Sserafim", "Yunjin", "08-10-2001");
@@ -541,22 +578,41 @@ public class memberDataSource {
         createMember("Gugudan", "Kang Mina", "04-12-1999");
 
         createMember("tripleS", "Dahyun", "08-01-2003");
+        createMember("tripleS", "Yeonji", "08-01-2008");
         createMember("tripleS", "Yubin", "03-02-2005");
         createMember("tripleS", "Yooyeon", "09-02-2001");
         createMember("tripleS", "Kotone", "10-03-2004");
         createMember("tripleS", "Hyerin", "12-04-2007");
+        createMember("tripleS", "Xinyu", "25-05-2002");
+        createMember("tripleS", "Nien", "02-06-2003");
         createMember("tripleS", "Seoyeon", "06-08-2003");
         createMember("tripleS", "Soomin", "03-10-2007");
         createMember("tripleS", "Nakyoung", "13-10-2002");
+        createMember("tripleS", "Sohyun", "13-10-2002");
         createMember("tripleS", "Jiwoo", "24-10-2005");
         createMember("tripleS", "Chaeyeon", "04-12-2004");
         createMember("tripleS", "Kaede", "20-12-2005");
 
-        createMember("SuperM/Shinee", "Taemin", "18-07-1993");
+        createMember("Cravity", "Minhee", "17-09-2002");
+        createMember("Cravity", "Serim", "03-03-1999");
+        createMember("Cravity", "Allen", "26-04-1999");
+        createMember("Cravity", "Jungmo", "05-02-2000");
+        createMember("Cravity", "Woobin", "16-10-2000");
+        createMember("Cravity", "Wonjin", "22-03-2001");
+        createMember("Cravity", "Hyeongjun", "30-11-2002");
+        createMember("Cravity", "Taeyoung", "27-01-2003");
+        createMember("Cravity", "Seongmin", "01-08-2003");
+
+        createMember("Pentagon", "Hui", "28-08-1993");
+        //https://kprofiles.com/pentagon-members-profile/
+
+        createMember("Shinee", "Taemin", "18-07-1993");
         createMember("April", "Rachel", "28-08-2000");
         createMember("ANS", "Dalyn", "27-08-1999");
-        createMember("Pentagon", "Hui", "28-08-1993");
         createMember("Weki Meki", "Lucy", "31-08-2002");
-        createMember("Cravity", "Minhee", "17-09-2002");
+
+
+
+        //Rocket punch, pristin, apink, nature, favorite, bugaboo, XG, Babymonster, Seventeen, Adya
     }
 }
