@@ -108,18 +108,20 @@ public class memberDataSource {
 
 
         for(int i=1;i<=countMemberInGame;i++) {
-            int randomNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
-            if (arrlist.contains(randomNum)) {
-                while(arrlist.contains(randomNum)) {
+            int rndNum = (int) ((Math.random() * (maxCountMember - 1)) + 1);
+            int randmNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
+            Log.e("rndNum", "rndNum: " + rndNum + ", randomNum: " + rndNum);
+            if (arrlist.contains(rndNum)) {
+                while(arrlist.contains(rndNum)) {
                     //Log.e("randNum", "randomNum: " + randomNum + ", arrlist: " + arrlist);
-                    randomNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
+                    rndNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
                 }
 
             }
 
-            arrlist.add(randomNum);
+            arrlist.add(rndNum);
             Cursor cursor = database.query(TABLE_MEMBERS,
-                    columns, COLUMN_ID + " = " + randomNum, null,
+                    columns, COLUMN_ID + " = " + rndNum, null,
                     null, null, null);
             cursor.moveToFirst();
             Member member;
@@ -703,12 +705,63 @@ public class memberDataSource {
         createMember("Weki Meki", "Yoojung", "12-11-1999");
         createMember("Weki Meki", "Doyeon", "04-12-1999");
 
+        createMember("Apink", "Chorong", "03-03-1991");
+        createMember("Apink", "Namjoo", "15-04-1995");
+        createMember("Apink", "Hayoung", "19-07-1996");
+        createMember("Apink", "Bomi", "13-08-1993");
+        createMember("Apink", "Eunji", "18-08-1993");
+
+        createMember("SNSD", "Sooyoung", "10-02-1990");
+        createMember("SNSD", "Taeyeon", "09-03-1989");
+        createMember("Ex-SNSD", "Jessica", "18-04-1989");
+        createMember("SNSD", "Sunny", "15-05-1989");
+        createMember("SNSD", "Yoona", "30-05-1990");
+        createMember("SNSD", "Seohyun", "28-06-1991");
+        createMember("SNSD", "Tiffany", "01-08-1989");
+        createMember("SNSD", "Hyoyeon", "22-09-1989");
+        createMember("SNSD", "Yuri", "05-12-1989");
+
+        createMember("WOO!AH!", "Wooyeon", "11-02-2003");
+        createMember("WOO!AH!", "Nana", "09-03-2001");
+        createMember("WOO!AH!", "Lucy", "09-04-2004");
+        createMember("WOO!AH!", "Minseo", "12-08-2004");
+        createMember("WOO!AH!", "Sora", "30-08-2003");
+        createMember("Ex-WOO!AH!", "Songyee", "25-09-2004");
+        createMember("WOO!AH!", "Wooyeon", "11-02-2003");
+        createMember("WOO!AH!", "Nana", "09-03-2001");
+        createMember("WOO!AH!", "Lucy", "09-04-2004");
+        createMember("WOO!AH!", "Minseo", "12-08-2004");
+        createMember("WOO!AH!", "Sora", "30-08-2003");
+
+        createMember("AOA", "Seolhyun", "03-01-1995");
+        createMember("Ex-AOA", "Jimin", "08-01-1991");
+        createMember("Ex-AOA", "Choa", "06-03-1990");
+        createMember("Ex-AOA", "Youkyung", "15-03-1993");
+        createMember("AOA", "Chanmi", "19-06-1996");
+        createMember("AOA", "Hyejeong", "10-08-1993");
+        createMember("Ex-AOA", "Mina", "21-09-1993");
+        createMember("Ex-AOA", "Yuna", "30-12-1992");
+
+        createMember("fromis_9", "Saerom", "07-01-1997");
+        createMember("fromis_9", "Seoyeon", "22-01-2000");
+        createMember("fromis_9", "Jiwon", "20-03-1998");
+        createMember("fromis_9", "Jiheon", "17-04-2003");
+        createMember("fromis_9", "Chaeyoung", "14-05-2000");
+        createMember("fromis_9", "Nagyung", "01-06-2000");
+        createMember("fromis_9", "Hayoung", "29-09-1997");
+        createMember("fromis_9", "Jisun", "23-11-1998");
+        createMember("Ex-fromis_9", "Gyuri", "27-12-1997");
+
+        createMember("TRI.BE", "Kelly", "16-01-2002");
+        createMember("TRI.BE", "Songsun", "22-03-1997");
+        createMember("TRI.BE", "Hyunbin", "26-03-2004");
+        createMember("TRI.BE", "Mire", "26-03-2006");
+        createMember("TRI.BE", "Jia", "30-06-2005");
+        createMember("TRI.BE", "Jinha", "21-11-2003");
+        createMember("TRI.BE", "Soeun", "10-12-2005");
+
         createMember("Shinee", "Taemin", "18-07-1993");
         createMember("April", "Rachel", "28-08-2000");
         createMember("ANS", "Dalyn", "27-08-1999");
-
-
-
-        // pristin, apink, nature, favorite, bugaboo
     }
 }
