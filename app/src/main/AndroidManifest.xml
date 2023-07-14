@@ -25,6 +25,9 @@
             android:name=".activities.memberPick.memberPickOverview"
             android:exported="false"/>
         <activity
+            android:name=".activities.memberPick.memberCompetitionOverview"
+            android:exported="false"/>
+        <activity
             android:name=".activities.memberList.memberListOverview"
             android:exported="false"/>
         <activity

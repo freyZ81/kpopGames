@@ -109,11 +109,9 @@ public class memberDataSource {
 
         for(int i=1;i<=countMemberInGame;i++) {
             int rndNum = (int) ((Math.random() * (maxCountMember - 1)) + 1);
-            int randmNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
             Log.e("rndNum", "rndNum: " + rndNum + ", randomNum: " + rndNum);
             if (arrlist.contains(rndNum)) {
                 while(arrlist.contains(rndNum)) {
-                    //Log.e("randNum", "randomNum: " + randomNum + ", arrlist: " + arrlist);
                     rndNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
                 }
 

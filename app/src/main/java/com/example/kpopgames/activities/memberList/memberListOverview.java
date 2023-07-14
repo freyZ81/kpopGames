@@ -18,6 +18,7 @@ import com.example.kpopgames.database.utils.DataSource;
 
 
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,13 +46,14 @@ public class memberListOverview extends AppCompatActivity {
             public void onClick(View view) {
                 memberDataSource.addMembers();
                 recreate();
+                Toast.makeText(memberListOverview.this, "Die Liste wurde erfolgreich aktualisiert",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private void showAllMembers () {
         final List<Member> memberList = memberDataSource.getAllMember();
-        //Log.e("memberList", memberList.toString());
         memberListView = findViewById(R.id.listview_member);
         memberListView.setTextFilterEnabled(true);
         memberListAdapter = new MemberListAdapter(this, memberList);

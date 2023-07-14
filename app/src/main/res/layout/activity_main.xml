@@ -6,13 +6,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
-        android:minWidth="500dp"
         android:textSize="20sp"
         android:text="Welcome to the Kpop Games"/>
 
@@ -27,8 +24,22 @@
         android:layout_marginBottom="10dp"
         android:minWidth="500dp"
         android:text="Pick the Member"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:onClick="onClickBtnMemberPick"/>
+
+    <Button
+        android:id="@+id/btnMemberCompetition"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/btnMemberPick"
+        android:minWidth="500dp"
+        android:text="Member Competition"
+        android:textSize="18sp"
+        android:onClick="onClickBtnMemberCompetition"/>
 
     <Button
         android:id="@+id/btnMemberBirthday"
@@ -38,10 +49,10 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/btnMemberPick"
+        android:layout_below="@+id/btnMemberCompetition"
         android:minWidth="500dp"
         android:text="Geburtstag"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:onClick="onClickBtnMemberBirthday"/>
 
     <Button
@@ -55,7 +66,7 @@
         android:layout_below="@+id/btnMemberBirthday"
         android:minWidth="500dp"
         android:text="Memberlist"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:onClick="onClickBtnMemberList"/>
 
 </RelativeLayout>
