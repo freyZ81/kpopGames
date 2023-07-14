@@ -33,6 +33,8 @@ public class memberPickOverview extends AppCompatActivity {
     private TextView txtGroupMemberTwo;
     private TextView txtWinnerText;
     private TextView txtWinnerTextMember;
+    private TextView txtRound;
+    private int numberRound;
     private List<Member> memberList;
     private Member memberOne;
     private Member memberTwo;
@@ -50,6 +52,9 @@ public class memberPickOverview extends AppCompatActivity {
         txtWinnerText.setVisibility(View.GONE);
         txtWinnerTextMember = findViewById(R.id.txtWinnerTextMember);
         txtWinnerTextMember.setVisibility(View.GONE);
+        numberRound = 1;
+        txtRound = findViewById(R.id.txtRound);
+        txtRound.setText("Round " + numberRound + "/" + (countMember-1));
 
         List<Member> memberList = memberDataSource.getListOfMember(countMember);
         setMemberOne(memberList);
@@ -115,15 +120,18 @@ public class memberPickOverview extends AppCompatActivity {
             txtGroupMemberTwo.setVisibility(View.GONE);
             btnMemberOne.setVisibility(View.GONE);
             btnMemberTwo.setVisibility(View.GONE);
+            txtRound.setVisibility(View.GONE);
             txtWinnerText.setVisibility(View.VISIBLE);
             txtWinnerTextMember.setVisibility(View.VISIBLE);
-            txtWinnerText.setText("Herzlichen Glückwunsch! Der Gewinner ist:");
+            txtWinnerText.setText("Congratulation! The winner is:");
             if (winMember.getGruppe() != null) {
-                txtWinnerTextMember.setText(winMember.getName() + " aus " + winMember.getGruppe());
+                txtWinnerTextMember.setText(winMember.getName() + " from " + winMember.getGruppe());
             } else {
                 txtWinnerTextMember.setText(winMember.getName());
             }
         } else {
+            numberRound += 1;
+            txtRound.setText("Round " + numberRound + "/" + (countMember-1));
             if (nextMember == 1) {
                 setMemberOne(memberList);
             } else if (nextMember == 2) {

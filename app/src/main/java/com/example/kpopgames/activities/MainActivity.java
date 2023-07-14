@@ -44,16 +44,15 @@ public class MainActivity extends AppCompatActivity {
     public void onClickBtnMemberPick(View v) {
         final CharSequence[] memberCount = {"2","4","8","16","32","64","128"};
         AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-        alert.setTitle("Wie viele Member sollen ausgewählt werden?");
+        alert.setTitle("How many members do you want to choose?");
         alert.setSingleChoiceItems(memberCount,-1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which)
             {
                 countMember = Integer.parseInt(memberCount[which].toString());
-                Log.e("dies", "nuts: " + memberCount[which] + ", countMember: " + countMember);
             }
         });
-        alert.setPositiveButton("Weiter", new DialogInterface.OnClickListener() {
+        alert.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent myIntent = new Intent(MainActivity.this, memberPickOverview.class);
@@ -67,16 +66,15 @@ public class MainActivity extends AppCompatActivity {
     public void onClickBtnMemberCompetition(View v) {
         final CharSequence[] memberCount = {"2","4","8","16","32","64","128"};
         AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-        alert.setTitle("Wie viele Member sollen ausgewählt werden?");
+        alert.setTitle("How many members do you want to choose?");
         alert.setSingleChoiceItems(memberCount,-1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which)
             {
                 countMember = Integer.parseInt(memberCount[which].toString());
-                Log.e("dies", "nuts: " + memberCount[which] + ", countMember: " + countMember);
             }
         });
-        alert.setPositiveButton("Weiter", new DialogInterface.OnClickListener() {
+        alert.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent myIntent = new Intent(MainActivity.this, memberCompetitionOverview.class);

@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="Heute hat keiner Geburtstag!"
+        android:text="It´s no-ones birthday today!"
         android:textAlignment="gravity"
         android:textSize="18sp"/>
 

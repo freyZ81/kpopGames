@@ -59,11 +59,9 @@ public class MemberListAdapter extends BaseAdapter {
         Member member = this.listData.get(position);
         holder.gruppeView.setText(member.getGruppe());
         holder.nameView.setText(member.getName());
-        if (member.getGeburtstag() != null) {
-            holder.geburtstagView.setText(member.getGeburtstag());
-        } else {
-            holder.geburtstagView.setText("");
-        }
+        holder.geburtstagView.setText(member.getGeburtstag());
+
+        //31.536.000
 
         return convertView;
     }

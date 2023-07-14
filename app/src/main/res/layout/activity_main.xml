@@ -51,7 +51,7 @@
         android:layout_marginBottom="10dp"
         android:layout_below="@+id/btnMemberCompetition"
         android:minWidth="500dp"
-        android:text="Geburtstag"
+        android:text="Birthdays"
         android:textSize="18sp"
         android:onClick="onClickBtnMemberBirthday"/>
 

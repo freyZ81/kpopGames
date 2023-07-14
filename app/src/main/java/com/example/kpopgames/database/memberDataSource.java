@@ -109,7 +109,6 @@ public class memberDataSource {
 
         for(int i=1;i<=countMemberInGame;i++) {
             int rndNum = (int) ((Math.random() * (maxCountMember - 1)) + 1);
-            Log.e("rndNum", "rndNum: " + rndNum + ", randomNum: " + rndNum);
             if (arrlist.contains(rndNum)) {
                 while(arrlist.contains(rndNum)) {
                     rndNum = ThreadLocalRandom.current().nextInt(1, maxCountMember + 1);
@@ -130,7 +129,6 @@ public class memberDataSource {
 
             idNumber += addCount;
         }
-        //Log.e("memberList", "" + memberList);
         return memberList;
     }
 
@@ -140,7 +138,6 @@ public class memberDataSource {
                 null, null, COLUMN_ID + " desc");
         cursor.moveToFirst();
         int lastId = Integer.parseInt(cursor.getString(0));
-        Log.e("lastId", "lastId: " + lastId);
         return lastId;
     }
 
@@ -181,7 +178,6 @@ public class memberDataSource {
         createMember(null, "Somi", "09-03-2001");
         createMember(null, "BabySoul", "06-07-1992");
         createMember(null, "Suzy", "10-10-1994");
-        createMember(null, "Taeyeon", "09-03-1989");
         createMember(null, "Hyuna", "06-06-1992");
         createMember(null, "Sunmi", "02-05-1992");
         createMember(null, "IU", "16-05-1993");

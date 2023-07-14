@@ -29,6 +29,9 @@ public class memberCompetitionOverview extends AppCompatActivity {
     private TextView txtGroupMemberTwo;
     private TextView txtWinnerText;
     private TextView txtWinnerTextMember;
+    private TextView txtRound;
+    private int countRound;
+    private int countRoundMax;
     private List<Member> memberList;
     private List<Member> memberListNext;
     private Member memberOne;
@@ -47,10 +50,13 @@ public class memberCompetitionOverview extends AppCompatActivity {
         txtWinnerText.setVisibility(View.GONE);
         txtWinnerTextMember = findViewById(R.id.txtWinnerTextMember);
         txtWinnerTextMember.setVisibility(View.GONE);
+        txtRound = findViewById(R.id.txtRound);
+        countRoundMax = countMember;
 
         memberList = memberDataSource.getListOfMember(countMember);
         memberListNext = new ArrayList<>();
         setMember(memberList);
+
 
         btnMemberOne = findViewById(R.id.btnMemberOnePick);
         btnMemberOne.setFocusable(false);
@@ -72,13 +78,12 @@ public class memberCompetitionOverview extends AppCompatActivity {
     }
 
     public void setMember(List<Member> memberList) {
+        setRound();
         int randomNumOne;
         randomNumOne = ThreadLocalRandom.current().nextInt(1, memberList.size() + 1);
 
         memberOne = memberList.get(randomNumOne-1);
-        Log.e("mL11", memberList.toString());
         memberList.remove(memberOne);
-        Log.e("mL12", memberList.toString());
         txtNameMemberOne = findViewById(R.id.txtMemberOneName);
         txtNameMemberOne.setText(memberOne.getName());
         txtGroupMemberOne = findViewById(R.id.txtMemberOneGroup);
@@ -92,9 +97,7 @@ public class memberCompetitionOverview extends AppCompatActivity {
         }
 
         memberTwo = memberList.get(randomNumTwo-1);
-        Log.e("mL21", memberList.toString());
         memberList.remove(memberTwo);
-        Log.e("mL22", memberList.toString());
         txtNameMemberTwo = findViewById(R.id.txtMemberTwoName);
         txtNameMemberTwo.setText(memberTwo.getName());
         txtGroupMemberTwo = findViewById(R.id.txtMemberTwoGroup);
@@ -103,14 +106,13 @@ public class memberCompetitionOverview extends AppCompatActivity {
 
     public void checkCountMember(Member winMember) {
         memberListNext.add(winMember);
-        Log.e("list", memberList.size() + ", " + memberList + ", " + memberListNext);
         if (memberList.size() == 0) {
             memberList = memberListNext;
+            memberListNext = new ArrayList<>();
         }
         if (memberList.size() > 1) {
             setMember(memberList);
         } else if (memberList.size() == 1) {
-            Log.e("list2", memberList.size() + ", " + memberList);
             txtNameMemberOne.setVisibility(View.GONE);
             txtGroupMemberOne.setVisibility(View.GONE);
             txtNameMemberTwo.setVisibility(View.GONE);
@@ -119,11 +121,27 @@ public class memberCompetitionOverview extends AppCompatActivity {
             btnMemberTwo.setVisibility(View.GONE);
             txtWinnerText.setVisibility(View.VISIBLE);
             txtWinnerTextMember.setVisibility(View.VISIBLE);
-            txtWinnerText.setText("Herzlichen Glückwunsch! Der Gewinner ist:");
+            txtWinnerText.setText("Congratulation! The winner is:");
             if (winMember.getGruppe() != null) {
-                txtWinnerTextMember.setText(winMember.getName() + " aus " + winMember.getGruppe());
+                txtWinnerTextMember.setText(winMember.getName() + " from " + winMember.getGruppe());
             } else {
                 txtWinnerTextMember.setText(winMember.getName());
+            }
+        }
+    }
+
+    public void setRound() {
+        int memberCount = memberList.size();
+        int memberNextCount = memberListNext.size();
+        if (memberNextCount == 0) {
+            if (memberCount == 2) {
+                txtRound.setText("Final");
+            } else if (memberCount == 4) {
+                txtRound.setText("Semi-Final");
+            } else if (memberCount == 8) {
+                txtRound.setText("Quarter Final");
+            } else {
+                txtRound.setText("Qualifications");
             }
         }
     }

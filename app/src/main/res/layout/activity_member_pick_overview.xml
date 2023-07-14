@@ -6,11 +6,20 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/txtRound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="Round 1">
+    </TextView>
+
+    <TextView
         android:id="@+id/txtMemberOneName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="10dp"
         android:text="Member 1">
     </TextView>
 
@@ -59,8 +68,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtMemberTwoGroup"
-        android:layout_toEndOf="@+id/btnMemberOnePick"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="10dp"
         android:text="Pick Member 2"
         android:textSize="14sp"/>
 
